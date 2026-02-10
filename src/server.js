@@ -17,7 +17,6 @@ app.use(
 app.use(express.json());
 app.use(morgan('dev'));
 
-// Routes
 app.get('/api/health', (req, res) => {
   res.json({ status: 'ok' });
 });
@@ -26,7 +25,6 @@ app.use('/api/auth', require('./routes/auth'));
 app.use('/api/profile', require('./routes/profile'));
 app.use('/api/tasks', require('./routes/tasks'));
 
-// Error handler (should be last)
 app.use(errorHandler);
 
 const PORT = process.env.PORT || 5000;
